@@ -1,4 +1,4 @@
-// Package polymere implement functions to manipulate polymere the methds react to a polymere
+// Package polymere implement functions to manipulate a polymere
 //  A polymere is composed by letters in alphabet,
 //  minuscule (consider as negative) or Capital (considered as positive).
 package polymere
@@ -31,15 +31,15 @@ func isOpposite(a, b uint8) (bool, error) {
 }
 
 //React method to acquire the reaction between opposite polarisation
-func React(polygrame string) (string, error) {
-	if len(polygrame) == 1 {
-		return polygrame, nil
+func React(polymere string) (string, error) {
+	if len(polymere) == 1 {
+		return polymere, nil
 	}
 	var buf bytes.Buffer
 	idx := 0
-	for idx < len(polygrame)-1 {
+	for idx < len(polymere)-1 {
 		//check if are opposite polymere
-		ok, err := isOpposite(polygrame[idx], polygrame[idx+1])
+		ok, err := isOpposite(polymere[idx], polymere[idx+1])
 		//check error
 		if err != nil {
 			return "", err
@@ -48,9 +48,9 @@ func React(polygrame string) (string, error) {
 			//skip
 			idx += 2
 			// write to buffer
-			_, err := buf.WriteString(polygrame[idx:])
+			_, err := buf.WriteString(polymere[idx:])
 			// replace polymere
-			polygrame = buf.String()
+			polymere = buf.String()
 			if err != nil {
 				return "", fmt.Errorf("React:WriteString:%s", err.Error())
 			}
@@ -61,11 +61,11 @@ func React(polygrame string) (string, error) {
 			continue
 		}
 
-		buf.WriteByte(polygrame[idx])
+		buf.WriteByte(polymere[idx])
 		idx++
 	}
-	//return polygrame
-	return polygrame, nil
+	//return polymere
+	return polymere, nil
 }
 
 //build a map of unique elements in polymer. all the element will be consider as

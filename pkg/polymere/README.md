@@ -6,7 +6,7 @@
 * [Index](#pkg-index)
 
 ## <a name="pkg-overview">Overview</a>
-Package polymere implement functions to manipulate polymere the methds react to a polymere
+Package polymere implement functions to manipulate a polymere
 
 	A polymere is composed by letters in alphabet,
 	minuscule (consider as negative) or Capital (considered as positive).
@@ -18,7 +18,7 @@ No packages beyond the Go standard library are imported.
 ## <a name="pkg-index">Index</a>
 * [Constants](#pkg-constants)
 * [func LenMinimalReaction(polymer string) (int, error)](#LenMinimalReaction)
-* [func React(polygrame string) (string, error)](#React)
+* [func React(polymere string) (string, error)](#React)
 
 #### <a name="pkg-files">Package files</a>
 [polymere.go](./polymere.go) 
@@ -39,6 +39,6 @@ LenMinimalReaction return the length of the smallest reaction removing one eleme
 
 ## <a name="React">func</a> [React](./polymere.go#L34)
 ``` go
-func React(polygrame string) (string, error)
+func React(polymere string) (string, error)
 ```
 React method to acquire the reaction between opposite polarisation

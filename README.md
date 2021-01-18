@@ -1,5 +1,5 @@
 ## Laboratory cli
-A cli to obtain a reaction and obtain smallest lenght removing a bridle element from a polymer. ::nerd_face:
+A cli to obtain a reaction and obtain smallest lenght removing a bridle element from a polymer. :nerd_face:
 
 ## Subjet
 
