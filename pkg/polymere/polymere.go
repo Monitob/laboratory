@@ -14,7 +14,7 @@ const (
 	ElementError = "arguments should be only letters"
 )
 
-//Check if elements are opposites
+// Check if elements are opposites
 func isOpposite(a, b uint8) (bool, error) {
 	var r, ar, br rune
 	ar = rune(a)
@@ -30,7 +30,7 @@ func isOpposite(a, b uint8) (bool, error) {
 	return r == br, nil
 }
 
-//React method to acquire the reaction between opposite polarisation
+// React method to acquire the reaction between opposite polarisation
 func React(polymere string) (string, error) {
 	if len(polymere) == 1 {
 		return polymere, nil
@@ -49,11 +49,11 @@ func React(polymere string) (string, error) {
 			idx += 2
 			// write to buffer
 			_, err := buf.WriteString(polymere[idx:])
-			// replace polymere
-			polymere = buf.String()
 			if err != nil {
 				return "", fmt.Errorf("React:WriteString:%s", err.Error())
 			}
+			// replace polymere
+			polymere = buf.String()
 			// restart
 			idx = 0
 			// reset buffer
